@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Input Name">
+        <!-- input name -->
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input type="text" onkeyup={keyUpFunction} label="Enter some text"></lightning-input>
+        </div>
+        <div class="slds-m-left_x-small">
+            Hello World!!! My Name is {fullName} and I am Feeling {feelings}.
+        </div>
+    </lightning-card>
+    <!-- second card -->
+    <lightning-card title="Input Name">
+        <!-- input name -->
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input type="text" onkeyup={trackDecorator} label="Enter some text"></lightning-input>
+        </div>
+        <div class="slds-m-left_x-small">
+            Hello World!!! My Name is {personalInfo.name} and I am Feeling {feelings}.
+        </div>
+    </lightning-card>
+    <!-- getter method -->
+    <lightning-card title="Input Name">
+        <div class="slds-m-left_x-small">
+            Hello World!!! My Name is {getterMethod} and I am Feeling {feelings}.
+        </div>
+    </lightning-card>
+</template>

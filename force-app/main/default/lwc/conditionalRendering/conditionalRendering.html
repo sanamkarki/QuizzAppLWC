@@ -1,0 +1,33 @@
+<template>
+    <lightning-card title="Conditional Rendering">
+        <div class="slds-m-left_x-small">
+            <lightning-button variant="brand" label="Click To Display!" title="Primary action" onclick={rendering}
+                class="slds-m-left_x-small">
+            </lightning-button>
+            <template if:true={isVisible}>
+                <div>Hello World!!! My Name is Sanam and I love LWC!!!</div>
+            </template>
+        </div>
+        <lightning-input type="text" onkeyup={renderingMethod} label="Type To See Text...">
+        </lightning-input>
+        <template if:true={getterRendering}>
+            <div>See the Data!!!</div>
+        </template>
+    </lightning-card>
+    <!-- Template Looping  -->
+    <lightning-card title='Template Looping'>
+        <div class="slds-m-left-x-small">
+            <template for:each={objectLooping} for:item="loopSingles">
+                <div key={loopSingles}>{loopSingles}</div>
+            </template>
+        </div>
+    </lightning-card>
+    Template looping on Array of Objects
+    <lightning-card title='Template Looping|Array Of Objects'>
+        <div class="slds-m-left-x-small">
+            <template for:each={arrayObj} for:item="loopSingles">
+                <div key={loopSingles.Id}>{loopSingles.Name}</div>
+            </template>
+        </div>
+    </lightning-card>
+</template>
