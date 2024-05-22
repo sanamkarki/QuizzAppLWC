@@ -1,0 +1,48 @@
+<template>
+    <lightning-card title="Lightning Quiz App - 2024">
+        <div class="slds-p-around_margin lgc-bg">
+            <form>
+                <template for:each={listOfQuestions} for:item="questionSingles">
+                    <div key={questionSingles.Id}>
+                        {questionSingles.Question}
+                        <!-- creating grid for display of each questions -->
+                        <div class="slds-grid slds-gutters slds-m-around_small">
+                            <div class="slds-col">
+                                <input class="slds-p-right_small" type="radio" name={questionSingles.Id} value="a"
+                                    onclick={valueChosen} />
+                                {questionSingles.AnswerChoices.a}
+                            </div>
+                            <div class="slds-col slds-p-right_small">
+                                <input type="radio" name={questionSingles.Id} value="b" onclick={valueChosen} />
+                                {questionSingles.AnswerChoices.b}
+                            </div>
+                            <div class="slds-col slds-p-right_small">
+                                <input type="radio" name={questionSingles.Id} value="c" onclick={valueChosen} />
+                                {questionSingles.AnswerChoices.c}
+                            </div>
+                        </div>
+
+                    </div>
+
+                </template>
+                <lightning-button variant="brand" type="submit" label="Submit" title="Submit Form"
+                    onclick={handleClickSubmit} class="slds-m-left_x-small"></lightning-button>
+                <lightning-button variant="brand" type="reset" label="Reset" title="Reset Form"
+                    onclick={handleClickReset} class="slds-m-left_x-small"></lightning-button>
+            </form>
+            <template if:true={displayFinalScore}>
+                <div> The score is: {finalValueCalc}</div>
+
+            </template>
+        </div>
+    </lightning-card>
+</template>
+<!-- 
+<div class="slds-grid slds-gutters">
+    <div class="slds-col">
+        <lightning-radio-group name={questionSingles.Id} label={value}
+            options={questionSingles.AnswerChoices} value={value} onchange={valueChosen}
+            type="radio"></lightning-radio-group>
+        <div> {selectedValue}</div>
+    </div>
+</div> -->
